@@ -1,3 +1,19 @@
+/**
+ * Setup:
+ * Connect an LED to digital pin 3
+ * 
+ * Description:
+ * Control the LED using serial input
+ * '1' => ON
+ * '0' => OFF
+ * 
+ * E.g., after uploading this sketch, open the terminal on your host computer, and type:
+ * 
+ * cat > /dev/cu.usbmodemxxxx (where xxxx is the port assigned. check the exact port number using ls /dev/cu.usbmodem*)
+ * 1 (Return) turns the LED ON 
+ * 0 (Return) turns the LED OFF
+ * 
+ */
 const int pinLed = 3;
 char input = '0';
 
@@ -11,7 +27,7 @@ void setup() {
 
 void loop() {
   input = Serial.read();
-  Serial.println(input);
+  //Serial.println(input);
 
   if(input == '1') {
     blink();

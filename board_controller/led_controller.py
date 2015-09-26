@@ -27,7 +27,7 @@ arduino_port = ""
 os_type = sys.platform
 if os_type == 'darwin':
     arduino_port_prefix = "cu.usbmodem*"
-else if os_type == 'linux':
+elif os_type == 'linux':
     arduino_port_prefix = "ttyUSB*"
 
 # Address of the led control on the Rails server

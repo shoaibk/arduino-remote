@@ -3,6 +3,7 @@
 # Setup:
 # Run the board program (in board/arduino_led/arduino_led_d3)
 # Make sure the remote server is running
+# Install packages 'pySerial', and 'requests' if necessary, using either pip or easy_install
 #
 # Description:
 # Communicates with the rails server using REST API.
@@ -11,17 +12,23 @@
 # If is_active is False, sends '0' to the board. LED should be switched OFF after blinking.
 #
 # TODO: Graceful degradation when the remote server is offline
-# TODO: 
+# TODO: Use push/websockets instead of polling server every few seconds
 
 import serial
 import requests
 import time
 import glob, os
+import sys
 
 # Arduino is typically connected to serial port something like /dev/cu.usbmodemxxxx
 os.chdir("/dev");
 arduino_port = ""
-arduino_port_prefix = "cu.usbmodem*"
+
+os_type = sys.platform
+if os_type == 'darwin':
+    arduino_port_prefix = "cu.usbmodem*"
+else if os_type == 'linux':
+    arduino_port_prefix = "ttyUSB*"
 
 # Address of the led control on the Rails server
 rest_endpoint = 'http://arduino-shoaibkhan.c9.io/sensors/1.json'

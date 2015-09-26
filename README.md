@@ -1,5 +1,5 @@
-ARDUINO REMOTE
+### Arduino Remote
 
-The aim of this project is to monitor and control a sensor connected to arduino using a REST client.
+Monitor and control a sensor connected to Arduino using a REST client. The server part of this project is [https://github.com/shoaibk/arduino-server](arduino-server).
 
 

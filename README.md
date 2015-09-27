@@ -27,7 +27,7 @@ The server has two responsibilities:
 1. Host the sensor data and states
 2. Serve the sensor data through a REST API
 
-An alternative is using [Parse](parse.com), which comes with the added benefit of push notifications. 
+An alternative is using [Parse](http://parse.com), which comes with the added benefit of push notifications. 
 
 #### App
 This app is a GUI for the REST client to communicate with the Server.  It can be implemented as an Android, an iOS or a web app.

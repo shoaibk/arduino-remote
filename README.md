@@ -22,3 +22,13 @@ This can be a Mac, PC, or a Raspberry Pi. The folder ```board_controller``` cont
 #### Server
 The server is a Ruby on Rails server hosted on [Cloud9](http://c9.io). The server part of this project is [here](https://github.com/shoaibk/arduino-server).
 
+The server has two responsibilities:
+1. Host the sensor data and states
+2. Serve the sensor data through a REST API
+
+An alternative is using [Parse](parse.com), which comes with the added benefit of push notifications. 
+
+#### App
+This app is a GUI for the REST client to communicate with the Server. Once the REST endpoint and the resources are defined, the app can the an Android, an iOS or a web app.
+
+The rails server provides a GUI to access the sensor data and manipulate them. For starter, we can use this as the App. The url for the LED sensor is [here](http://arduino-shoaibkhan.c9.io/sensors/1).

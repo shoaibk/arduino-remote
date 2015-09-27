@@ -17,10 +17,10 @@ The LED program responds to serial input of '1' and '0' by turning the LED on an
 #### Computer
 This can be a Mac, PC, or a Raspberry Pi. The folder ```board_controller``` contains the python program that connects to the remote Rails server and sends control signal to the Arduino through serial interface.
 
-
-
+To connect to the server using the REST API, we use ```requests``` [library](http://www.python-requests.org/en/latest/). It has a great [tutorial](http://docs.python-requests.org/en/latest/user/quickstart/) to get you started in less than a minute!
+To connect to the Arduino using the serial interface, we use ```pySerial``` [library] (https://github.com/pyserial/pyserial). 
 #### Server
-The server is a Ruby on Rails server hosted on [Cloud9](http://c9.io). The server part of this project is [here](https://github.com/shoaibk/arduino-server).
+The server is a Ruby on Rails server hosted on [Cloud9](http://c9.io). The source code of this project is [here](https://github.com/shoaibk/arduino-server).
 
 The server has two responsibilities:
 1. Host the sensor data and states

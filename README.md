@@ -29,6 +29,6 @@ The server has two responsibilities:
 An alternative is using [Parse](parse.com), which comes with the added benefit of push notifications. 
 
 #### App
-This app is a GUI for the REST client to communicate with the Server. Once the REST endpoint and the resources are defined, the app can the an Android, an iOS or a web app.
+This app is a GUI for the REST client to communicate with the Server.  It can be implemented as an Android, an iOS or a web app.
 
 The rails server provides a GUI to access the sensor data and manipulate them. For starter, we can use this as the App. The url for the LED sensor is [here](http://arduino-shoaibkhan.c9.io/sensors/1).

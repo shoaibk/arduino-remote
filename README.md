@@ -19,6 +19,21 @@ This can be a Mac, PC, or a Raspberry Pi. The folder ```board_controller``` cont
 
 To connect to the server using the REST API, we use ```requests``` [library](http://www.python-requests.org/en/latest/). It has a great [tutorial](http://docs.python-requests.org/en/latest/user/quickstart/) to get you started in less than a minute!
 To connect to the Arduino using the serial interface, we use ```pySerial``` [library] (https://github.com/pyserial/pyserial). 
+
+##### Setup
+
+1. Run the board program (in board/arduino_led/arduino_led_d3)
+2. Make sure the remote server is running
+3. Install packages 'pySerial', and 'requests' if necessary, using either pip or easy_install
+
+##### Description
+
+1. Communicates with the rails server using REST API.
+2. Sends an http GET to the rest endpoint. Checks the json response.
+3. If is_active is True, sends '1' to the board. LED should be switched ON after blinking.
+4. If is_active is False, sends '0' to the board. LED should be switched OFF after blinking.
+
+
 #### Server
 The server is a Ruby on Rails server hosted on [Cloud9](http://c9.io). The source code of this project is [here](https://github.com/shoaibk/arduino-server).
 

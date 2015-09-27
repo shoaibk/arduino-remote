@@ -7,7 +7,7 @@ Monitor and control a sensor connected to Arduino using a REST client.
 #### Arduino
 The Arduino programs (sketch) are in folder ```board/arduino_led/```. They should be uploaded to the Arduino board using the [Arduino GUI](https://www.arduino.cc/en/Main/Software). 
 
-The LED program responds to serial input of '1' and '0' by turning on or off the LED. Once the program is uploaded to the board, test it by connecting from the host computer.
+The LED program responds to serial input of '1' and '0' by turning the LED on and off, respectively. Once the program is uploaded to the board, test it by connecting from the host computer.
 
 1. Open the terminal
 2. Type in ```cat > /dev/[arduino-port]``` where the exact name of the arduino port might differ from system to system and also from session to session.

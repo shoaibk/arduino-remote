@@ -14,6 +14,8 @@ The LED program responds to serial input of '1' and '0' by turning the LED on an
 3. On the prompt, type ```1 (enter)```. This should turn the LED on the Arduino ON.
 4. Next, type ```0 (enter)```. This should turn the LED on the Arduino OFF.
 
+---
+
 #### Computer
 This can be a Mac, PC, or a Raspberry Pi. The folder ```board_controller``` contains the python program that connects to the remote Rails server and sends control signal to the Arduino through serial interface.
 
@@ -33,6 +35,7 @@ To connect to the Arduino using the serial interface, we use ```pySerial``` [lib
 3. If is_active is True, sends '1' to the board. LED should be switched ON after blinking.
 4. If is_active is False, sends '0' to the board. LED should be switched OFF after blinking.
 
+---
 
 #### Server
 The server is a Ruby on Rails server hosted on [Cloud9](http://c9.io). The source code of this project is [here](https://github.com/shoaibk/arduino-server).
@@ -43,6 +46,8 @@ The server has two responsibilities:
 2. Serve the sensor data through a REST API
 
 An alternative is using [Parse](http://parse.com), which comes with the added benefit of push notifications. 
+
+---
 
 #### App
 This app is a GUI for the REST client to communicate with the Server.  It can be implemented as an Android, an iOS or a web app.

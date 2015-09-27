@@ -23,6 +23,7 @@ To connect to the Arduino using the serial interface, we use ```pySerial``` [lib
 The server is a Ruby on Rails server hosted on [Cloud9](http://c9.io). The source code of this project is [here](https://github.com/shoaibk/arduino-server).
 
 The server has two responsibilities:
+
 1. Host the sensor data and states
 2. Serve the sensor data through a REST API
 

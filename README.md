@@ -2,7 +2,7 @@
 
 Monitor and control a sensor connected to Arduino using a REST client. 
 
-![Diagram](arduino-project-overview.png)
+![Diagram](https://docs.google.com/drawings/d/1dxhGdoE5cY5imFVhBkM0MjCVS9nCnTd66h1rLmZjlH0/pub?w=1092&h=513)
 
 #### Arduino
 The Arduino programs (sketch) are in folder ```board/arduino_led/```. They should be uploaded to the Arduino board using the [Arduino GUI](https://www.arduino.cc/en/Main/Software). 

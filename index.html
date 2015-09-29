@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Arduino Remote by shoaibk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Arduino Remote</h1>
+      <h2 class="project-tagline">Remotely Control an Arduino through a RESTful Webservice</h2>
+      <a href="https://github.com/shoaibk/arduino-remote" class="btn">View on GitHub</a>
+      <a href="https://github.com/shoaibk/arduino-remote/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/shoaibk/arduino-remote/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h3>
+<a id="arduino-remote" class="anchor" href="#arduino-remote" aria-hidden="true"><span class="octicon octicon-link"></span></a>Arduino Remote</h3>
+
+<p>Monitor and control a sensor connected to Arduino using a REST client. </p>
+
+<p><img src="arduino-project-overview.png" alt="Diagram"></p>
+
+<h4>
+<a id="arduino" class="anchor" href="#arduino" aria-hidden="true"><span class="octicon octicon-link"></span></a>Arduino</h4>
+
+<p>The Arduino programs (sketch) are in folder <code>board/arduino_led/</code>. They should be uploaded to the Arduino board using the <a href="https://www.arduino.cc/en/Main/Software">Arduino GUI</a>. </p>
+
+<p>The LED program responds to serial input of '1' and '0' by turning the LED on and off, respectively. Once the program is uploaded to the board, test it by connecting from the host computer.</p>
+
+<ol>
+<li>Open the terminal</li>
+<li>Type in <code>cat &gt; /dev/[arduino-port]</code> where the exact name of the arduino port might differ from system to system and also from session to session. This will connect the Standard Input of your computer (which is usually the keyboard) to the serial port of the Arduino.</li>
+<li>On the prompt, type <code>1 (enter)</code>. This should turn the LED on the Arduino ON.</li>
+<li>Next, type <code>0 (enter)</code>. This should turn the LED on the Arduino OFF.</li>
+</ol>
+
+<hr>
+
+<h4>
+<a id="computer" class="anchor" href="#computer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Computer</h4>
+
+<p>This can be a Mac, PC, or a Raspberry Pi. The folder <code>board_controller</code> contains the python program that connects to the remote Rails server and sends control signal to the Arduino through serial interface.</p>
+
+<p>To connect to the server using the REST API, we use <code>requests</code> <a href="http://www.python-requests.org/en/latest/">library</a>. It has a great <a href="http://docs.python-requests.org/en/latest/user/quickstart/">tutorial</a> to get you started in less than a minute!
+To connect to the Arduino using the serial interface, we use <code>pySerial</code> <a href="https://github.com/pyserial/pyserial">library</a>. </p>
+
+<h5>
+<a id="setup" class="anchor" href="#setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup</h5>
+
+<ol>
+<li>Run the board program (in board/arduino_led/arduino_led_d3)</li>
+<li>Make sure the remote server is running</li>
+<li>Install packages 'pySerial', and 'requests' if necessary, using either pip or easy_install</li>
+</ol>
+
+<h5>
+<a id="description" class="anchor" href="#description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h5>
+
+<ol>
+<li>Communicates with the rails server using REST API.</li>
+<li>Sends an http GET to the rest endpoint. Checks the json response.</li>
+<li>If is_active is True, sends '1' to the board. LED should be switched ON after blinking.</li>
+<li>If is_active is False, sends '0' to the board. LED should be switched OFF after blinking.</li>
+</ol>
+
+<hr>
+
+<h4>
+<a id="server" class="anchor" href="#server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Server</h4>
+
+<p>The server is a Ruby on Rails server hosted on <a href="http://c9.io">Cloud9</a>. The source code of this project is <a href="https://github.com/shoaibk/arduino-server">here</a>.</p>
+
+<p>The server has two responsibilities:</p>
+
+<ol>
+<li>Host the sensor data and states</li>
+<li>Serve the sensor data through a REST API</li>
+</ol>
+
+<p>An alternative is using <a href="http://parse.com">Parse</a>, which comes with the added benefit of push notifications. </p>
+
+<hr>
+
+<h4>
+<a id="app" class="anchor" href="#app" aria-hidden="true"><span class="octicon octicon-link"></span></a>App</h4>
+
+<p>This app is a GUI for the REST client to communicate with the Server.  It can be implemented as an Android, an iOS or a web app.</p>
+
+<p>The rails server provides a GUI to access the sensor data and manipulate them. For starter, we can use this as the App. The url for the LED sensor is <a href="http://arduino-shoaibkhan.c9.io/sensors/1">here</a>.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/shoaibk/arduino-remote">Arduino Remote</a> is maintained by <a href="https://github.com/shoaibk">shoaibk</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>

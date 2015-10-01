@@ -31,7 +31,7 @@ elif os_type == 'linux':
     arduino_port_prefix = "ttyUSB*"
 
 # Address of the led control on the Rails server
-rest_endpoint = 'http://arduino-server.herokuapp.com/sensors/1.json'
+rest_endpoint = 'https://arduino-server.herokuapp.com/sensors/1.json'
 waiting_delay = 2
 
 # Detect the Arduino port. We are assuming the host computer to be a Mac OSX

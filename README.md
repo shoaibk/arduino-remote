@@ -38,14 +38,16 @@ To connect to the Arduino using the serial interface, we use ```pySerial``` [lib
 ---
 
 #### Server
-The server is a Ruby on Rails server hosted on [Cloud9](http://c9.io). The source code of this project is [here](https://github.com/shoaibk/arduino-server).
+The server is a Ruby on Rails server hosted on [Heroku](https://arduino-server.herokuapp.com/). The source code of this project is [here](https://github.com/shoaibk/arduino-server).
 
 The server has two responsibilities:
 
 1. Host the sensor data and states
 2. Serve the sensor data through a REST API
 
-An alternative is using [Parse](http://parse.com), which comes with the added benefit of push notifications. 
+At the moment, the implementation does not support push notifications. For mobile apps, polling can drain a lot of battery power, so push needs to be eventually implemented. We are considering ways to implement push into the rails framework.
+
+An alternative to using rails is [Parse](http://parse.com), which comes with the added benefit of push notifications. 
 
 ---
 
